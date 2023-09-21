@@ -1,16 +1,7 @@
-# fitness_app
+# Групповой проект по мобильной разработке
+Лопай и Топай )))
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Команда
+* Яровикова Анастасия - <a href = https://github.com/ynastt> @ynastt </a>
+* Емельяненко Дарья - <a href = https://github.com/pugprogram> @pugprogram </a>
+* Лозовска Карина - <a href = https://github.com/lozovska> @lozovska </a>
