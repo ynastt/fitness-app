@@ -17,8 +17,7 @@ class _SignupState extends State<Signup> {
   final TextEditingController _controllerUsername = TextEditingController();
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
-  final TextEditingController _controllerConFirmPassword =
-  TextEditingController();
+  final TextEditingController _controllerConFirmPassword = TextEditingController();
 
   final Box _boxAccounts = Hive.box("accounts");
   bool _obscurePassword = true;
@@ -35,12 +34,12 @@ class _SignupState extends State<Signup> {
             children: [
               const SizedBox(height: 100),
               Text(
-                "Register",
+                "Регистрация",
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               const SizedBox(height: 10),
               Text(
-                "Create your account",
+                "Создайте свой акаунт",
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 35),
@@ -48,7 +47,7 @@ class _SignupState extends State<Signup> {
                 controller: _controllerUsername,
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
-                  labelText: "Username",
+                  labelText: "Имя пользователя",
                   prefixIcon: const Icon(Icons.person_outline),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -59,9 +58,9 @@ class _SignupState extends State<Signup> {
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter username.";
+                    return "Пожалуйста введите имя пользователя.";
                   } else if (_boxAccounts.containsKey(value)) {
-                    return "Username is already registered.";
+                    return "Пользователь с таким именем уже зарегистрирован.";
                   }
 
                   return null;
@@ -74,7 +73,7 @@ class _SignupState extends State<Signup> {
                 focusNode: _focusNodeEmail,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  labelText: "Email",
+                  labelText: "Почта",
                   prefixIcon: const Icon(Icons.email_outlined),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -85,9 +84,9 @@ class _SignupState extends State<Signup> {
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter email.";
+                    return "Пожалуйста введите почту.";
                   } else if (!(value.contains('@') && value.contains('.'))) {
-                    return "Invalid email";
+                    return "Неверный адрес почты";
                   }
                   return null;
                 },
@@ -100,7 +99,7 @@ class _SignupState extends State<Signup> {
                 focusNode: _focusNodePassword,
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
-                  labelText: "Password",
+                  labelText: "Пароль",
                   prefixIcon: const Icon(Icons.password_outlined),
                   suffixIcon: IconButton(
                       onPressed: () {
@@ -120,9 +119,9 @@ class _SignupState extends State<Signup> {
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter password.";
-                  } else if (value.length < 8) {
-                    return "Password must be at least 8 character.";
+                    return "Пожалуйста введите пароль.";
+                  } else if (value.length < 6) {
+                    return "Пароль должен содержать не менее 6 символов.";
                   }
                   return null;
                 },
@@ -136,7 +135,7 @@ class _SignupState extends State<Signup> {
                 focusNode: _focusNodeConfirmPassword,
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
-                  labelText: "Confirm Password",
+                  labelText: "Подтверждение пароля",
                   prefixIcon: const Icon(Icons.password_outlined),
                   suffixIcon: IconButton(
                       onPressed: () {
@@ -156,9 +155,9 @@ class _SignupState extends State<Signup> {
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter password.";
+                    return "Пожалуйста введите пароль повторно.";
                   } else if (value != _controllerPassword.text) {
-                    return "Password doesn't match.";
+                    return "Пароли не совпадают.";
                   }
                   return null;
                 },
@@ -189,7 +188,7 @@ class _SignupState extends State<Signup> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             behavior: SnackBarBehavior.floating,
-                            content: const Text("Registered Successfully"),
+                            content: const Text("Регистрация прошла успешно!"),
                           ),
                         );
 
@@ -198,15 +197,15 @@ class _SignupState extends State<Signup> {
                         Navigator.pop(context);
                       }
                     },
-                    child: const Text("Register"),
+                    child: const Text("Зарегистрироваться"),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Already have an account?"),
+                      const Text("Уже есть аккаунт?"),
                       TextButton(
                         onPressed: () => Navigator.pop(context),
-                        child: const Text("Login"),
+                        child: const Text("Войдите"),
                       ),
                     ],
                   ),

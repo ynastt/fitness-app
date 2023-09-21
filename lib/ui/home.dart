@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login App"),
+        title: const Text("ТОПАТЬ И ЛОПАТЬ"),
         elevation: 0,
         actions: [
           Padding(
@@ -44,17 +44,21 @@ class Home extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Welcome 🎉",
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              _boxLogin.get("userName"),
-              style: Theme.of(context).textTheme.headlineLarge,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+             Text(
+                "Добро пожаловать 🎉",
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              const SizedBox(height: 10),
+              Text(
+                _boxLogin.get("userName"),
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ],
+          ),
           ],
         ),
       ),

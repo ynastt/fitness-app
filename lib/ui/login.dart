@@ -40,13 +40,13 @@ class _LoginState extends State<Login> {
             children: [
               const SizedBox(height: 150),
               Text(
-                "Welcome to Fitness-App",
+                "Добро пожаловать в ЛОПАТЬ И ТОПАТЬ",
                 style: Theme.of(context).textTheme.headlineLarge,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Text(
-                "Login to your account",
+                "Войдите в аккаунт",
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 60),
@@ -54,7 +54,7 @@ class _LoginState extends State<Login> {
                 controller: _controllerUsername,
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
-                  labelText: "Username",
+                  labelText: "Имя пользователя",
                   prefixIcon: const Icon(Icons.person_outline),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -66,14 +66,15 @@ class _LoginState extends State<Login> {
                 onEditingComplete: () => _focusNodePassword.requestFocus(),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter username.";
+                    return "Пожалуйста введите имя пользователя.";
                   } else if (!_boxAccounts.containsKey(value)) {
-                    return "Username is not registered.";
+                    return "Пользователь с таким именем не зарегистрирован.";
                   }
 
                   return null;
                 },
               ),
+
               const SizedBox(height: 10),
               TextFormField(
                 controller: _controllerPassword,
@@ -81,7 +82,7 @@ class _LoginState extends State<Login> {
                 obscureText: _obscurePassword,
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
-                  labelText: "Password",
+                  labelText: "Пароль",
                   prefixIcon: const Icon(Icons.password_outlined),
                   suffixIcon: IconButton(
                       onPressed: () {
@@ -101,10 +102,10 @@ class _LoginState extends State<Login> {
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter password.";
+                    return "Пожалуйста введите пароль.";
                   } else if (value !=
                       _boxAccounts.get(_controllerUsername.text)) {
-                    return "Wrong password.";
+                    return "Неверный пароль.";
                   }
 
                   return null;
@@ -135,12 +136,12 @@ class _LoginState extends State<Login> {
                         );
                       }
                     },
-                    child: const Text("Login"),
+                    child: const Text("Войти"),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Don't have an account?"),
+                      const Text("Еще нет аккаунта?"),
                       TextButton(
                         onPressed: () {
                           _formKey.currentState?.reset();
@@ -154,7 +155,7 @@ class _LoginState extends State<Login> {
                             ),
                           );
                         },
-                        child: const Text("Signup"),
+                        child: const Text("Регистрация"),
                       ),
                     ],
                   ),
