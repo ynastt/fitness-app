@@ -84,7 +84,7 @@ class _LoginState extends State<Login> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                // После заполнения поля имени еренаправляем фокус на поле пароля
+                // После заполнения поля имени перенаправляем фокус на поле пароля
                 onEditingComplete: () => _focusNodePassword.requestFocus(),
                 // Валидация для поля ввода имени пользователя
                 // Если пользователь не заполнил поле или
@@ -167,6 +167,7 @@ class _LoginState extends State<Login> {
 
                         // Переход на домашнюю страницу при нажатии на
                         // кнопку "Войти"
+                        // на стек кладем текущий контекст, убирая старый 
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -191,6 +192,7 @@ class _LoginState extends State<Login> {
                           _formKey.currentState?.reset();
                           // Переход на страницу регистрации при нажатии на
                           // кнопку "Регистрация"
+                          // на стек кладем текущий контекст 
                           Navigator.push(
                             context,
                             MaterialPageRoute(
