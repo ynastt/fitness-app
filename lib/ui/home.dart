@@ -9,7 +9,8 @@ class Home extends StatelessWidget {
 
   // Создаем объект Box из Hive для работы с данными пользователя.
   final Box _boxLogin = Hive.box("login");
-  // final Box _boxAccounts = Hive.box("accounts");
+  final Box _boxAccountsHeight = Hive.box("heights");
+  final Box _boxAccountsWeight = Hive.box("weights");
 
   // Переопределяем метод build для построения пользовательского интерфейса
   @override
@@ -68,6 +69,37 @@ class Home extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 _boxLogin.get("userName"),
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Ваш рост: ",
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              Text(
+                _boxAccountsHeight.get(_boxLogin.get("userName")),
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Ваш вес: ",
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              Text(
+                _boxAccountsWeight.get(_boxLogin.get("userName")),
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
