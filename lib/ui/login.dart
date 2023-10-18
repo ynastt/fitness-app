@@ -13,6 +13,7 @@ class Login extends StatefulWidget {
   @override
   State<Login> createState() => _LoginState();
 }
+
 // Этот класс представляет состояние виджета Login.
 // В нем объявляются различные переменные и контроллеры,
 // которые используются на странице.
@@ -213,7 +214,7 @@ class _LoginState extends State<Login> {
   }
 
   // Метод, в котором при завершении работы страницы освобождаются ресурсы,
-  // такие как контроллеры и экземпляр класса
+  // такие как контроллеры, ноды фокуса и экземпляр класса
   @override
   void dispose() {  // dispose method of the StatefulWidget
     _focusNodePassword.dispose();
