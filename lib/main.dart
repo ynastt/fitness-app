@@ -13,4 +13,6 @@ Future<void> _initHive() async{
   await Hive.initFlutter();
   await Hive.openBox("login");
   await Hive.openBox("accounts");
+  await Hive.openBox("heights");
+  await Hive.openBox("weights");
 }
