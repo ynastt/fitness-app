@@ -1,10 +1,10 @@
 # Групповой проект по мобильной разработке
 Лопай и Топай )))
 
-![](/images/1.png "LogIn page")
-![](/images/2.png "SignIn page")
+![](/images/1.jpg "LogIn page")
+![](/images/2.jpg "SignIn page")
 ![](/images/3.png "Home page")
-![](/images/4.png "Result page")
+![](/images/4.jpg "Result page")
 
 ### Команда
 * Яровикова Анастасия - <a href = https://github.com/ynastt> @ynastt </a>
