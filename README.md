@@ -1,9 +1,8 @@
 # Групповой проект по мобильной разработке
 Лопай и Топай )))
 
-![](/images/1.jpg "LogIn page")
-![](/images/2.jpg "SignIn page")
-![](/images/3.png "Home page")
+<img src="/images/1.jpg" alt="LogIn page" style="height: 550px; width:250px;"/>  <img src="/images/2.jpg" alt="SignIn page" style="height: 550px; width:250px;"/>  <img src="/images/3.png" alt="Home page" style="height: 550px; width:350px;"/> 
+
 ![](/images/4.jpg "Result page")
 
 ### Команда
